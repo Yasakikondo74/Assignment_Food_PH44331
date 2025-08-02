@@ -1,0 +1,6 @@
+@PH44331_SD20103_Assignment_CSharp6_HostAddress = http://localhost:5213
+
+GET {{PH44331_SD20103_Assignment_CSharp6_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
