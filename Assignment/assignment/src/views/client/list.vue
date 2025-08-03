@@ -1,34 +1,15 @@
 <template>
-  <table class="table table-striped table-hover">
-    <thead>
-      <tr>
-        <th scope="col">ID</th>
-        <th scope="col">Name</th>
-        <th scope="col">Available</th>
-        <th scope="col">Quantity</th>
-        <th scope="col">Cost</th>
-      </tr>
-    </thead>
-    <tbody>
-          <tr v-for="x in food_data" :key="x.id">
-              <td class="fw-bold">{{ x.id}}</td>
-              
-
-<div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
-  <div class="card-body">
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+  <div class="d-flex flex-wrap gap-3 p-3">
+    <div class="card" style="width: 18rem;" v-for="x in food_data" :key="x.id">
+      <img :src="x.imageLink" class="card-img-top" :alt="x.foodName || 'Food image'" @error="handleImageError" />
+      <div class="card-body">
+        <h2>{{ x.foodName }}</h2>
+        <p class="badge rounded-pill text-bg-success" v-if="x.available">Available!</p>
+        <p class="badge text-bg-danger" v-else>Not Available</p>
+        <p>{{ (x.cost - 0.01).toFixed(2) }} $</p>
+      </div>
+    </div>
   </div>
-</div>
-
-
-              <td>{{ x.foodName }}</td>
-              <td>{{ x.available }}</td>
-              <td>{{ x.quantity }}</td>
-              <td>{{ x.cost }}</td>
-          </tr>
-    </tbody>
-  </table>
 </template>
 
 <script setup>
@@ -46,4 +27,8 @@ async function callAPI() {
 onMounted( async () => {
     callAPI()
 })
+
+function handleImageError(event) {
+  event.target.src = '/assets/not_found.png' 
+}
 </script>

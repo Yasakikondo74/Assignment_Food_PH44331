@@ -21,19 +21,11 @@ public partial class FoodDBContext : DbContext
 
     public virtual DbSet<ReceiptDetail> ReceiptDetails { get; set; }
 
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-    {
-        if (!optionsBuilder.IsConfigured)
-        {
-            optionsBuilder.UseSqlServer("local");
-        }
-    }
-
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Account>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Account__3214EC2706947823");
+            entity.HasKey(e => e.Id).HasName("PK__Account__3214EC278EF6968D");
 
             entity.Property(e => e.Id).IsFixedLength();
             entity.Property(e => e.AccRole).IsFixedLength();
@@ -41,14 +33,14 @@ public partial class FoodDBContext : DbContext
 
         modelBuilder.Entity<Food>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Food__3214EC2722135888");
+            entity.HasKey(e => e.Id).HasName("PK__Food__3214EC272B44C123");
 
             entity.Property(e => e.Id).IsFixedLength();
         });
 
         modelBuilder.Entity<Receipt>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Receipt__3214EC272D14BCAB");
+            entity.HasKey(e => e.Id).HasName("PK__Receipt__3214EC276EB9F9D6");
 
             entity.Property(e => e.Id).IsFixedLength();
             entity.Property(e => e.AccountId).IsFixedLength();
@@ -61,7 +53,7 @@ public partial class FoodDBContext : DbContext
 
         modelBuilder.Entity<ReceiptDetail>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__ReceiptD__3214EC27243B65C8");
+            entity.HasKey(e => e.Id).HasName("PK__ReceiptD__3214EC2795E9ECCA");
 
             entity.Property(e => e.Id).IsFixedLength();
             entity.Property(e => e.FoodId).IsFixedLength();

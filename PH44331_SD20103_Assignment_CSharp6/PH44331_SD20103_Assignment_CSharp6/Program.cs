@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
@@ -10,11 +11,15 @@ using System.Security.Claims;
 
 namespace PH44331_SD20103_Assignment_CSharp6
 {
+    public class LoginRequest
+    {
+        public string Username { get; set; }
+        public string Password { get; set; }
+    }
     public class Program
     {
         public static void Main(string[] args)
         {
-            bool isAdmin = false;
             var builder = WebApplication.CreateBuilder(args);
             // Add services to the container.
             builder.Services.AddAuthorization();
@@ -34,7 +39,8 @@ namespace PH44331_SD20103_Assignment_CSharp6
                     {
                         builder.WithOrigins("http://localhost:5173") // Your Vue app's address
                                .AllowAnyHeader()
-                               .AllowAnyMethod();
+                               .AllowAnyMethod()
+                               .AllowCredentials();
                     });
             });
             var app = builder.Build();
@@ -47,10 +53,15 @@ namespace PH44331_SD20103_Assignment_CSharp6
             app.UseCors("AllowSpecificOrigin");
 
             // Login endpoint
-            app.MapPost("/login/{username}/{password}", async (FoodDBContext _db, HttpContext http, string username, string password) =>
+            app.MapPost("/login", async (FoodDBContext _db, HttpContext http, LoginRequest loginRequest) =>
             {
+                if (loginRequest == null)
+                {
+                    return Results.BadRequest(new { message = "Invalid request body." });
+                }
+
                 var user = await _db.Accounts
-                    .FirstOrDefaultAsync(a => a.AccUsername == username && a.AccPassword == password);
+                    .FirstOrDefaultAsync(a => a.AccUsername == loginRequest.Username && a.AccPassword == loginRequest.Password);
 
                 if (user == null)
                     return Results.Unauthorized();
@@ -62,39 +73,48 @@ namespace PH44331_SD20103_Assignment_CSharp6
                 };
                 var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
                 var principal = new ClaimsPrincipal(identity);
-                if (user.AccRole == "admin")
-                {
-                    isAdmin = true;
-                }
+
                 await http.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
                 return Results.Ok(new { message = "Login successful", role = user.AccRole });
             });
 
             // GET: Generic CRUD for all tables (already implemented above)
-            app.MapGet("/{tableName}/{id?}", async (FoodDBContext _db, HttpContext http, string tableName, string? id) =>
+            app.MapGet("/{tableName}/{id?}", async (
+                string tableName,
+                string? id,
+                ClaimsPrincipal user,
+                FoodDBContext _db) =>
             {
+                var isAuthenticated = user.Identity?.IsAuthenticated ?? false;
+                var isAdmin = user.IsInRole("admin");
+
                 switch (tableName.ToLower())
                 {
                     case "food":
                         if (string.IsNullOrEmpty(id))
                             return Results.Ok(await _db.Foods.ToListAsync());
                         return Results.Ok(await _db.Foods.FirstOrDefaultAsync(x => x.Id == id));
-                    case "account" when isAdmin:
+
+                    case "account" when isAuthenticated && isAdmin:
                         if (string.IsNullOrEmpty(id))
                             return Results.Ok(await _db.Accounts.ToListAsync());
                         return Results.Ok(await _db.Accounts.FirstOrDefaultAsync(x => x.Id == id));
-                    case "receipt" when isAdmin:
+
+                    case "receipt" when isAuthenticated && isAdmin:
                         if (string.IsNullOrEmpty(id))
                             return Results.Ok(await _db.Receipts.ToListAsync());
                         return Results.Ok(await _db.Receipts.FirstOrDefaultAsync(x => x.Id == id));
-                    case "receiptdetail" when isAdmin:
+
+                    case "receiptdetail" when isAuthenticated && isAdmin:
                         if (string.IsNullOrEmpty(id))
                             return Results.Ok(await _db.ReceiptDetails.ToListAsync());
                         return Results.Ok(await _db.ReceiptDetails.FirstOrDefaultAsync(x => x.Id == id));
+
                     default:
-                        return Results.BadRequest("Invalid table name");
+                        return Results.BadRequest("Invalid or unauthorized table name.");
                 }
-            });
+            }).RequireAuthorization();
+
 
             // POST: Generic create for all tables
             app.MapPost("/{tableName}", [Authorize(Roles = "admin")] async (FoodDBContext _db, string tableName, [FromBody] object entity) =>

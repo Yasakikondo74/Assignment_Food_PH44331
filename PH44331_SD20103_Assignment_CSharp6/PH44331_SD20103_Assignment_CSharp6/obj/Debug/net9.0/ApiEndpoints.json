@@ -27,8 +27,8 @@
     ]
   },
   {
-    "ContainingType": "PH44331_SD20103_Assignment_CSharp6.Program\u002B\u003C\u003Ec__DisplayClass0_0",
-    "Method": "\u003CMain\u003Eb__4",
+    "ContainingType": "PH44331_SD20103_Assignment_CSharp6.Program\u002B\u003C\u003Ec",
+    "Method": "\u003CMain\u003Eb__0_4",
     "RelativePath": "{tableName}/{id?}",
     "HttpMethod": "GET",
     "IsController": false,
@@ -113,21 +113,16 @@
     ]
   },
   {
-    "ContainingType": "PH44331_SD20103_Assignment_CSharp6.Program\u002B\u003C\u003Ec__DisplayClass0_0",
-    "Method": "\u003CMain\u003Eb__3",
-    "RelativePath": "login/{username}/{password}",
+    "ContainingType": "PH44331_SD20103_Assignment_CSharp6.Program\u002B\u003C\u003Ec",
+    "Method": "\u003CMain\u003Eb__0_3",
+    "RelativePath": "login",
     "HttpMethod": "POST",
     "IsController": false,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "username",
-        "Type": "System.String",
-        "IsRequired": true
-      },
-      {
-        "Name": "password",
-        "Type": "System.String",
+        "Name": "loginRequest",
+        "Type": "PH44331_SD20103_Assignment_CSharp6.LoginRequest",
         "IsRequired": true
       }
     ],

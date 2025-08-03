@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 namespace PH44331_SD20103_Assignment_CSharp6.Models;
 
 [Table("Account")]
-[Index("AccUsername", Name = "UQ__Account__136121E1E7AD98A4", IsUnique = true)]
+[Index("AccUsername", Name = "UQ__Account__136121E1101BB151", IsUnique = true)]
 public partial class Account
 {
     [Key]

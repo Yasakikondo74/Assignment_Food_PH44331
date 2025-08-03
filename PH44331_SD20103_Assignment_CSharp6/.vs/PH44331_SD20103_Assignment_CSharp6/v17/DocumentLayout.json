@@ -1,21 +1,25 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Yasaki74\\Downloads\\CSharp 6\\PH44331_SD20103_Assignment_CSharp6\\Assignment_Food_PH44331\\PH44331_SD20103_Assignment_CSharp6\\",
+  "WorkspaceRootPath": "C:\\Users\\thehu\\source\\repos\\Assignment_Food_PH44331\\PH44331_SD20103_Assignment_CSharp6\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9998D665-4355-4BD7-89FF-EF30CE793D9D}|PH44331_SD20103_Assignment_CSharp6\\PH44331_SD20103_Assignment_CSharp6.csproj|c:\\users\\yasaki74\\downloads\\csharp 6\\ph44331_sd20103_assignment_csharp6\\assignment_food_ph44331\\ph44331_sd20103_assignment_csharp6\\ph44331_sd20103_assignment_csharp6\\models\\fooddbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9998D665-4355-4BD7-89FF-EF30CE793D9D}|PH44331_SD20103_Assignment_CSharp6\\PH44331_SD20103_Assignment_CSharp6.csproj|solutionrelative:ph44331_sd20103_assignment_csharp6\\models\\fooddbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9998D665-4355-4BD7-89FF-EF30CE793D9D}|PH44331_SD20103_Assignment_CSharp6\\PH44331_SD20103_Assignment_CSharp6.csproj|c:\\users\\yasaki74\\downloads\\csharp 6\\ph44331_sd20103_assignment_csharp6\\assignment_food_ph44331\\ph44331_sd20103_assignment_csharp6\\ph44331_sd20103_assignment_csharp6\\ph44331_sd20103_assignment_csharp6.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
-      "RelativeMoniker": "D:0:0:{9998D665-4355-4BD7-89FF-EF30CE793D9D}|PH44331_SD20103_Assignment_CSharp6\\PH44331_SD20103_Assignment_CSharp6.csproj|solutionrelative:ph44331_sd20103_assignment_csharp6\\ph44331_sd20103_assignment_csharp6.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9998D665-4355-4BD7-89FF-EF30CE793D9D}|PH44331_SD20103_Assignment_CSharp6\\PH44331_SD20103_Assignment_CSharp6.csproj|c:\\users\\yasaki74\\downloads\\csharp 6\\ph44331_sd20103_assignment_csharp6\\assignment_food_ph44331\\ph44331_sd20103_assignment_csharp6\\ph44331_sd20103_assignment_csharp6\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9998D665-4355-4BD7-89FF-EF30CE793D9D}|PH44331_SD20103_Assignment_CSharp6\\PH44331_SD20103_Assignment_CSharp6.csproj|c:\\users\\thehu\\source\\repos\\assignment_food_ph44331\\ph44331_sd20103_assignment_csharp6\\ph44331_sd20103_assignment_csharp6\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9998D665-4355-4BD7-89FF-EF30CE793D9D}|PH44331_SD20103_Assignment_CSharp6\\PH44331_SD20103_Assignment_CSharp6.csproj|solutionrelative:ph44331_sd20103_assignment_csharp6\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9998D665-4355-4BD7-89FF-EF30CE793D9D}|PH44331_SD20103_Assignment_CSharp6\\PH44331_SD20103_Assignment_CSharp6.csproj|c:\\users\\yasaki74\\downloads\\csharp 6\\ph44331_sd20103_assignment_csharp6\\assignment_food_ph44331\\ph44331_sd20103_assignment_csharp6\\ph44331_sd20103_assignment_csharp6\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "AbsoluteMoniker": "D:0:0:{9998D665-4355-4BD7-89FF-EF30CE793D9D}|PH44331_SD20103_Assignment_CSharp6\\PH44331_SD20103_Assignment_CSharp6.csproj|c:\\users\\thehu\\source\\repos\\assignment_food_ph44331\\ph44331_sd20103_assignment_csharp6\\ph44331_sd20103_assignment_csharp6\\models\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9998D665-4355-4BD7-89FF-EF30CE793D9D}|PH44331_SD20103_Assignment_CSharp6\\PH44331_SD20103_Assignment_CSharp6.csproj|solutionrelative:ph44331_sd20103_assignment_csharp6\\models\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9998D665-4355-4BD7-89FF-EF30CE793D9D}|PH44331_SD20103_Assignment_CSharp6\\PH44331_SD20103_Assignment_CSharp6.csproj|c:\\users\\thehu\\source\\repos\\assignment_food_ph44331\\ph44331_sd20103_assignment_csharp6\\ph44331_sd20103_assignment_csharp6\\models\\fooddbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9998D665-4355-4BD7-89FF-EF30CE793D9D}|PH44331_SD20103_Assignment_CSharp6\\PH44331_SD20103_Assignment_CSharp6.csproj|solutionrelative:ph44331_sd20103_assignment_csharp6\\models\\fooddbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9998D665-4355-4BD7-89FF-EF30CE793D9D}|PH44331_SD20103_Assignment_CSharp6\\PH44331_SD20103_Assignment_CSharp6.csproj|c:\\users\\thehu\\source\\repos\\assignment_food_ph44331\\ph44331_sd20103_assignment_csharp6\\ph44331_sd20103_assignment_csharp6\\ph44331_sd20103_assignment_csharp6.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{9998D665-4355-4BD7-89FF-EF30CE793D9D}|PH44331_SD20103_Assignment_CSharp6\\PH44331_SD20103_Assignment_CSharp6.csproj|solutionrelative:ph44331_sd20103_assignment_csharp6\\ph44331_sd20103_assignment_csharp6.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9998D665-4355-4BD7-89FF-EF30CE793D9D}|PH44331_SD20103_Assignment_CSharp6\\PH44331_SD20103_Assignment_CSharp6.csproj|c:\\users\\thehu\\source\\repos\\assignment_food_ph44331\\ph44331_sd20103_assignment_csharp6\\ph44331_sd20103_assignment_csharp6\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{9998D665-4355-4BD7-89FF-EF30CE793D9D}|PH44331_SD20103_Assignment_CSharp6\\PH44331_SD20103_Assignment_CSharp6.csproj|solutionrelative:ph44331_sd20103_assignment_csharp6\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
@@ -26,88 +30,92 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "FoodDBContext.cs",
-              "DocumentMoniker": "C:\\Users\\Yasaki74\\Downloads\\CSharp 6\\PH44331_SD20103_Assignment_CSharp6\\Assignment_Food_PH44331\\PH44331_SD20103_Assignment_CSharp6\\PH44331_SD20103_Assignment_CSharp6\\Models\\FoodDBContext.cs",
-              "RelativeDocumentMoniker": "PH44331_SD20103_Assignment_CSharp6\\Models\\FoodDBContext.cs",
-              "ToolTip": "C:\\Users\\Yasaki74\\Downloads\\CSharp 6\\PH44331_SD20103_Assignment_CSharp6\\Assignment_Food_PH44331\\PH44331_SD20103_Assignment_CSharp6\\PH44331_SD20103_Assignment_CSharp6\\Models\\FoodDBContext.cs",
-              "RelativeToolTip": "PH44331_SD20103_Assignment_CSharp6\\Models\\FoodDBContext.cs",
-              "ViewState": "AgIAACUAAAAAAAAAAAAqwCMAAAAtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-27T12:52:16.019Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "Account.cs",
+              "DocumentMoniker": "C:\\Users\\thehu\\source\\repos\\Assignment_Food_PH44331\\PH44331_SD20103_Assignment_CSharp6\\PH44331_SD20103_Assignment_CSharp6\\Models\\Account.cs",
+              "RelativeDocumentMoniker": "PH44331_SD20103_Assignment_CSharp6\\Models\\Account.cs",
+              "ToolTip": "C:\\Users\\thehu\\source\\repos\\Assignment_Food_PH44331\\PH44331_SD20103_Assignment_CSharp6\\PH44331_SD20103_Assignment_CSharp6\\Models\\Account.cs",
+              "RelativeToolTip": "PH44331_SD20103_Assignment_CSharp6\\Models\\Account.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-03T17:07:21.016Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FoodDBContext.cs",
+              "DocumentMoniker": "C:\\Users\\thehu\\source\\repos\\Assignment_Food_PH44331\\PH44331_SD20103_Assignment_CSharp6\\PH44331_SD20103_Assignment_CSharp6\\Models\\FoodDBContext.cs",
+              "RelativeDocumentMoniker": "PH44331_SD20103_Assignment_CSharp6\\Models\\FoodDBContext.cs",
+              "ToolTip": "C:\\Users\\thehu\\source\\repos\\Assignment_Food_PH44331\\PH44331_SD20103_Assignment_CSharp6\\PH44331_SD20103_Assignment_CSharp6\\Models\\FoodDBContext.cs",
+              "RelativeToolTip": "PH44331_SD20103_Assignment_CSharp6\\Models\\FoodDBContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-03T15:55:33.991Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "PH44331_SD20103_Assignment_CSharp6.http",
-              "DocumentMoniker": "C:\\Users\\Yasaki74\\Downloads\\CSharp 6\\PH44331_SD20103_Assignment_CSharp6\\Assignment_Food_PH44331\\PH44331_SD20103_Assignment_CSharp6\\PH44331_SD20103_Assignment_CSharp6\\PH44331_SD20103_Assignment_CSharp6.http",
+              "DocumentMoniker": "C:\\Users\\thehu\\source\\repos\\Assignment_Food_PH44331\\PH44331_SD20103_Assignment_CSharp6\\PH44331_SD20103_Assignment_CSharp6\\PH44331_SD20103_Assignment_CSharp6.http",
               "RelativeDocumentMoniker": "PH44331_SD20103_Assignment_CSharp6\\PH44331_SD20103_Assignment_CSharp6.http",
-              "ToolTip": "C:\\Users\\Yasaki74\\Downloads\\CSharp 6\\PH44331_SD20103_Assignment_CSharp6\\Assignment_Food_PH44331\\PH44331_SD20103_Assignment_CSharp6\\PH44331_SD20103_Assignment_CSharp6\\PH44331_SD20103_Assignment_CSharp6.http",
+              "ToolTip": "C:\\Users\\thehu\\source\\repos\\Assignment_Food_PH44331\\PH44331_SD20103_Assignment_CSharp6\\PH44331_SD20103_Assignment_CSharp6\\PH44331_SD20103_Assignment_CSharp6.http",
               "RelativeToolTip": "PH44331_SD20103_Assignment_CSharp6\\PH44331_SD20103_Assignment_CSharp6.http",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
               "WhenOpened": "2025-08-02T10:18:34.294Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Yasaki74\\Downloads\\CSharp 6\\PH44331_SD20103_Assignment_CSharp6\\Assignment_Food_PH44331\\PH44331_SD20103_Assignment_CSharp6\\PH44331_SD20103_Assignment_CSharp6\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\thehu\\source\\repos\\Assignment_Food_PH44331\\PH44331_SD20103_Assignment_CSharp6\\PH44331_SD20103_Assignment_CSharp6\\Program.cs",
               "RelativeDocumentMoniker": "PH44331_SD20103_Assignment_CSharp6\\Program.cs",
-              "ToolTip": "C:\\Users\\Yasaki74\\Downloads\\CSharp 6\\PH44331_SD20103_Assignment_CSharp6\\Assignment_Food_PH44331\\PH44331_SD20103_Assignment_CSharp6\\PH44331_SD20103_Assignment_CSharp6\\Program.cs",
+              "ToolTip": "C:\\Users\\thehu\\source\\repos\\Assignment_Food_PH44331\\PH44331_SD20103_Assignment_CSharp6\\PH44331_SD20103_Assignment_CSharp6\\Program.cs",
               "RelativeToolTip": "PH44331_SD20103_Assignment_CSharp6\\Program.cs",
-              "ViewState": "AgIAANwAAAAAAAAAAAAAAMIAAAAjAAAAAAAAAA==",
+              "ViewState": "AgIAAGIAAAAAAAAAAAAIwG0AAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-27T12:56:00.92Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\Yasaki74\\Downloads\\CSharp 6\\PH44331_SD20103_Assignment_CSharp6\\Assignment_Food_PH44331\\PH44331_SD20103_Assignment_CSharp6\\PH44331_SD20103_Assignment_CSharp6\\appsettings.json",
+              "DocumentMoniker": "C:\\Users\\thehu\\source\\repos\\Assignment_Food_PH44331\\PH44331_SD20103_Assignment_CSharp6\\PH44331_SD20103_Assignment_CSharp6\\appsettings.json",
               "RelativeDocumentMoniker": "PH44331_SD20103_Assignment_CSharp6\\appsettings.json",
-              "ToolTip": "C:\\Users\\Yasaki74\\Downloads\\CSharp 6\\PH44331_SD20103_Assignment_CSharp6\\Assignment_Food_PH44331\\PH44331_SD20103_Assignment_CSharp6\\PH44331_SD20103_Assignment_CSharp6\\appsettings.json",
+              "ToolTip": "C:\\Users\\thehu\\source\\repos\\Assignment_Food_PH44331\\PH44331_SD20103_Assignment_CSharp6\\PH44331_SD20103_Assignment_CSharp6\\appsettings.json",
               "RelativeToolTip": "PH44331_SD20103_Assignment_CSharp6\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-07-27T12:55:26.852Z"
-            }
-          ]
-        },
-        {
-          "DockedWidth": 689,
-          "SelectedChildIndex": -1,
-          "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{004be353-6879-467c-9d1e-9ac23cdf6d49}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+              "WhenOpened": "2025-07-27T12:55:26.852Z",
+              "EditorCaption": ""
             }
           ]
         }
