@@ -8,7 +8,8 @@ create table Food(
     Food_Name nvarchar(50) unique,
     Available bit,
     Quantity int,
-    Cost money
+    Cost money,
+    Image_Link char
 )
 
 create table Account(

@@ -4718,11 +4718,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Yasaki74\\Downloads\\CSharp 6\\PH44331_SD20103_Assignment_CSharp6\\PH44331_SD20103_Assignment_CSharp6\\PH44331_SD20103_Assignment_CSharp6\\PH44331_SD20103_Assignment_CSharp6.csproj",
+      "projectUniqueName": "C:\\Users\\Yasaki74\\Downloads\\CSharp 6\\PH44331_SD20103_Assignment_CSharp6\\Assignment_Food_PH44331\\PH44331_SD20103_Assignment_CSharp6\\PH44331_SD20103_Assignment_CSharp6\\PH44331_SD20103_Assignment_CSharp6.csproj",
       "projectName": "PH44331_SD20103_Assignment_CSharp6",
-      "projectPath": "C:\\Users\\Yasaki74\\Downloads\\CSharp 6\\PH44331_SD20103_Assignment_CSharp6\\PH44331_SD20103_Assignment_CSharp6\\PH44331_SD20103_Assignment_CSharp6\\PH44331_SD20103_Assignment_CSharp6.csproj",
+      "projectPath": "C:\\Users\\Yasaki74\\Downloads\\CSharp 6\\PH44331_SD20103_Assignment_CSharp6\\Assignment_Food_PH44331\\PH44331_SD20103_Assignment_CSharp6\\PH44331_SD20103_Assignment_CSharp6\\PH44331_SD20103_Assignment_CSharp6.csproj",
       "packagesPath": "C:\\Users\\Yasaki74\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Yasaki74\\Downloads\\CSharp 6\\PH44331_SD20103_Assignment_CSharp6\\PH44331_SD20103_Assignment_CSharp6\\PH44331_SD20103_Assignment_CSharp6\\obj\\",
+      "outputPath": "C:\\Users\\Yasaki74\\Downloads\\CSharp 6\\PH44331_SD20103_Assignment_CSharp6\\Assignment_Food_PH44331\\PH44331_SD20103_Assignment_CSharp6\\PH44331_SD20103_Assignment_CSharp6\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

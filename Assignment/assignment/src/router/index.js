@@ -14,12 +14,12 @@ const router = createRouter({
       children:[
         {
           path: 'food',
-          name: 'food-list',
+          name: 'food-list-client',
           component: () => import('../views/client/list.vue')
         },
         {
           path: 'detail/:id',
-          name: 'food-detail',
+          name: 'food-detail-client',
           component: () => import('../views/client/detail.vue')
         }
       ]
@@ -30,21 +30,21 @@ const router = createRouter({
       children:[
         {
           path: 'food',
-          name: 'food-list',
+          name: 'food-list-admin',
           component: () => import('../views/admin/list.vue')
         },
         {
           path: 'add',
-          name: 'food-add',
+          name: 'food-add-admin',
           component: () => import('../views/admin/add.vue')
         },
         {
           path: 'update/:id',
-          name: 'food-update',
+          name: 'food-update-admin',
           component: () => import('../views/admin/update.vue')
         },        {
           path: 'detail/:id',
-          name: 'food-detail',
+          name: 'food-detail-admin',
           component: () => import('../views/admin/detail.vue')
         }
       ]

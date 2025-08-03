@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PH44331_SD20103_Assignment_CSharp6")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3b86a7fd9d4e062132cb8f05aaa579b078276a17")]
 [assembly: System.Reflection.AssemblyProductAttribute("PH44331_SD20103_Assignment_CSharp6")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PH44331_SD20103_Assignment_CSharp6")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
