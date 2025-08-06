@@ -64,6 +64,8 @@ import { ref, reactive, inject, onMounted, computed } from 'vue'
 import { RouterLink, useRouter, useRoute } from 'vue-router'
 import axios from 'axios'
 
+axios.defaults.withCredentials = true
+
 const route = useRoute()
 const router = useRouter()
 const id = route.params.id
@@ -128,7 +130,7 @@ async function remove() {
     try {
       await axios.delete(url + "/food/" + id)
       alert("Deleted successfully")
-      router.push("/admin/food/list")
+      router.push("/admin/food")
     } catch (err) {
       console.error("Failed to delete:", err)
       alert("Failed to delete item")

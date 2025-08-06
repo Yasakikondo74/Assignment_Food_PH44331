@@ -28,10 +28,9 @@
             v-model="editedRows[x.id].available"
             class="form-control"
             @change="markChanged(x.id)"
-            disabled
           >
-            <option value="true">true</option>
-            <option value="false">false</option>
+            <option :value="true">true</option>
+            <option :value="false">false</option>
           </select>
         </td>
 
@@ -81,12 +80,18 @@
       </tr>
     </tbody>
   </table>
+  <RouterLink :to="`/admin/add`" class="btn btn-primary btn-sm">
+    Add
+  </RouterLink>
 </template>
 
 <script setup>
+
 import { ref, reactive, inject, onMounted } from 'vue'
 import { RouterLink } from 'vue-router'
 import axios from 'axios'
+
+axios.defaults.withCredentials = true
 
 const url = inject('url')
 const food_data = ref([])
@@ -127,6 +132,14 @@ function hasChanged(id) {
 }
 
 async function saveChanges(id) {
+  console.log('ID being used:', id);
+  console.log('URL being requested:', `${url}/food/${id}`);
+  
+  if (!id) {
+    console.error('ID is invalid, cannot save changes.');
+    alert('Invalid item ID. Cannot save.');
+    return;
+  }
   try {
     await axios.put(`${url}/food/${id}`, editedRows[id])
     alert('Successfully updated');

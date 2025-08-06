@@ -2,7 +2,7 @@
   <nav :class="['navbar navbar-expand-lg', isDarkMode ? 'bg-dark navbar-dark' : 'bg-body-tertiary']">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">Navbar</a>
-
+      
       <button
         class="navbar-toggler"
         type="button"
@@ -34,7 +34,7 @@
               data-bs-toggle="dropdown"
               aria-expanded="false"
             >
-              <i class="bi bi-person-circle me-1"></i> {{ user.username }}
+              <i class="bi bi-person-circle me-1"></i> {{ user.accUsername }}
             </button>
             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userMenu">
               <li>
@@ -45,13 +45,13 @@
                   {{ isDarkMode ? 'Light Mode' : 'Dark Mode' }}
                 </button>
               </li>
-              <li v-if="user.accRole === 'admin'">
+              <li v-if="isAdmin">
                 <router-link class="dropdown-item" to="/admin/food">Food List</router-link>
               </li>
-              <li v-if="user.accRole === 'admin'">
-                <a class="dropdown-item" href="#">Account List</a>
+              <li v-if="isAdmin">
+                <router-link class="dropdown-item" to="/accounts">Account List</router-link>
               </li>
-              <li v-if="user.accRole === 'admin'">
+              <li v-if="isAdmin">
                 <a class="dropdown-item" href="#">Order List</a>
               </li>
               <li>
@@ -67,15 +67,17 @@
 </template>
 
 <script setup>
-import { inject, ref, onMounted, onBeforeUnmount, watchEffect } from 'vue'
-import { useRouter } from 'vue-router'
+import { inject, ref, onMounted, watchEffect, computed, watch } from 'vue'
+import { useRouter, useRoute } from 'vue-router'
 
 const url = inject('url')
-const emitter = inject('emitter')
 const router = useRouter()
+const route = useRoute()
 
 const user = ref(null)
 const isDarkMode = ref(false)
+
+const isAdmin = computed(() => { return user.value?.accRole?.toLowerCase() == 'admin     ' })
 
 function applyTheme() {
   document.documentElement.setAttribute('data-bs-theme', isDarkMode.value ? 'dark' : 'light')
@@ -89,22 +91,36 @@ function toggleTheme() {
 async function updateUser() {
   const username = localStorage.getItem('username')
   const role = localStorage.getItem('role')
+
   if (!username || !role) {
+    console.log("No user found in localStorage. Setting user to null.")
     user.value = null
     return
   }
 
   try {
-    const response = await fetch(`${url}/account/${username}`)
-    if (!response.ok) throw new Error('User fetch failed')
+    const response = await fetch(`${url}/account/${username}`, {
+      method: 'GET',
+      credentials: 'include',
+    })
+
+    if (!response.ok) {
+      const errorText = await response.text()
+      console.error(`User fetch failed: ${response.status} - ${response.statusText}`, errorText)
+      logout() 
+      return
+    }
+
     const data = await response.json()
-    user.value = data
+    user.value = { ...data, accRole: role }
+    console.log("Successfully fetched user data:", user.value)
+
   } catch (err) {
-    console.error(err)
-    user.value = { username, acc_role: role } 
+    console.error('Error in updateUser:', err)
+    user.value = { username, accRole: role }
+    console.log("Using fallback user data:", user.value)
   }
 }
-
 function logout() {
   localStorage.removeItem('username')
   localStorage.removeItem('role')
@@ -114,16 +130,18 @@ function logout() {
 
 watchEffect(() => {
   applyTheme()
-});
+})
 
+// Watch the route object for changes. When a user logs in and navigates,
+// the route changes, which will trigger this watch function.
+watch(() => route.path, () => {
+  updateUser()
+})
+
+// Initial call on mount
 onMounted(() => {
   isDarkMode.value = localStorage.getItem('darkMode') === 'true'
   updateUser()
-  emitter.on('login-success', updateUser)
 })
 
-onBeforeUnmount(() => {
-  emitter.off('login-success', updateUser)
-})
-console.log(user.value?.acc_role)
 </script>

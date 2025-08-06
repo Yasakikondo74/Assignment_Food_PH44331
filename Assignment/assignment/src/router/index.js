@@ -52,7 +52,7 @@ const router = createRouter({
           path: 'update/:id',
           name: 'food-update-admin',
           component: () => import('../views/admin/update.vue')
-        },        {
+        },        {
           path: 'detail/:id',
           name: 'food-detail-admin',
           component: () => import('../views/admin/detail.vue')
@@ -66,5 +66,8 @@ const router = createRouter({
     },
   ],
 })
+
+router.afterEach(() => {
+});
 
 export default router

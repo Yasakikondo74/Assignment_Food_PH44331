@@ -10,11 +10,13 @@
 </template>
 <script setup>
 import { ref, inject, onMounted } from 'vue'
-import { RouterLink, useRouter, useRoute } from 'vue-router'
+import { RouterLink, useRoute } from 'vue-router'
 import axios from 'axios'
+
+axios.defaults.withCredentials = true
+
 const r = useRoute()
 const id = r.params.id
-const rr = useRouter()
 const url = inject("url")
 const food_data = ref({
     foodName: "",

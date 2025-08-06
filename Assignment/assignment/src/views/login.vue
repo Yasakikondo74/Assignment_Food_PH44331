@@ -52,7 +52,6 @@ const username = ref('')
 const password = ref('')
 const errorMessage = ref('')
 const loading = ref(false)
-const emitter = inject('emitter')
 
 async function handleLogin() {
   errorMessage.value = ''
@@ -80,10 +79,11 @@ async function handleLogin() {
     }
 
     const result = await res.json()
-    localStorage.setItem('userId', result.id)
-    localStorage.setItem("username", username.value)
-    localStorage.setItem("role", result.role)
-    emitter.emit('login-success')
+    localStorage.setItem("username", result.accUsername)
+    localStorage.setItem("role", result.accRole)
+    
+    // Simply push to the desired route.
+    // The main App component's 'watch' on the route will handle the rest.
     router.push("/")
 
   } catch (err) {
@@ -94,6 +94,7 @@ async function handleLogin() {
   }
 }
 </script>
+
 <style lang="sass">
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@200;300;400;500;600;700&display=swap")
 

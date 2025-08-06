@@ -6,12 +6,13 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.min.js'
 import 'bootstrap-icons/font/bootstrap-icons.css'
 import mitt from 'mitt'
-
+//7135
 const url = "https://localhost:7135"
 provide("url", url)
 
 const emitter = mitt()
 provide("emitter", emitter)
+
 </script>
 
 <template>
