@@ -21,7 +21,10 @@
             <router-link class="nav-link" :to="{ name: 'home' }">Home</router-link>
           </li>
           <li>
-            <router-link class="nav-link" to="/client/food">Food List</router-link>
+            <router-link class="nav-link" to="/client/food/list">Food List</router-link>
+          </li>
+          <li v-if="isCustomer">
+            <router-link class="nav-link" to="/client/food/buy">Buy</router-link>
           </li>
         </ul>
 
@@ -46,13 +49,16 @@
                 </button>
               </li>
               <li v-if="isAdmin">
-                <router-link class="dropdown-item" to="/admin/food">Food List</router-link>
+                <router-link class="dropdown-item" to="/admin/food/list">Food List</router-link>
               </li>
               <li v-if="isAdmin">
-                <router-link class="dropdown-item" to="/accounts">Account List</router-link>
+                <router-link class="dropdown-item" to="/admin/account/list">Account List</router-link>
               </li>
               <li v-if="isAdmin">
-                <a class="dropdown-item" href="#">Order List</a>
+                <a class="dropdown-item" href="/admin/receipt/list">Receipt List</a>
+              </li>
+              <li v-if="isAdmin">
+                <a class="dropdown-item" href="/admin/receipt_detail/list">Receipt Detail List</a>
               </li>
               <li>
                 <button class="dropdown-item text-danger" @click="logout">Logout</button>
@@ -78,6 +84,7 @@ const user = ref(null)
 const isDarkMode = ref(false)
 
 const isAdmin = computed(() => { return user.value?.accRole?.toLowerCase() == 'admin     ' })
+const isCustomer = computed(() => { return user.value?.accRole?.toLowerCase() == 'customer  ' })
 
 function applyTheme() {
   document.documentElement.setAttribute('data-bs-theme', isDarkMode.value ? 'dark' : 'light')

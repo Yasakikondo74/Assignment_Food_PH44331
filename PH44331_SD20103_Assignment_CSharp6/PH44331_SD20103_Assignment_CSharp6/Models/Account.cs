@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 namespace PH44331_SD20103_Assignment_CSharp6.Models;
 
 [Table("Account")]
-[Index("AccUsername", Name = "UQ__Account__136121E1101BB151", IsUnique = true)]
+[Index("AccUsername", Name = "UQ__Account__136121E1D7533B62", IsUnique = true)]
 public partial class Account
 {
     [Key]
@@ -27,6 +27,12 @@ public partial class Account
     [Column("acc_password")]
     [StringLength(50)]
     public string AccPassword { get; set; }
+
+    [StringLength(100)]
+    public string Email { get; set; }
+
+    [Column(TypeName = "datetime")]
+    public DateTime? BirthDate { get; set; }
 
     [Column("acc_role")]
     [StringLength(10)]

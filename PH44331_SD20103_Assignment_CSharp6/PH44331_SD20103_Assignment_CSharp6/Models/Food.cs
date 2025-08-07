@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 namespace PH44331_SD20103_Assignment_CSharp6.Models;
 
 [Table("Food")]
-[Index("FoodName", Name = "UQ__Food__BB07E556F41EED2F", IsUnique = true)]
+[Index("FoodName", Name = "UQ__Food__BB07E556FD4206AF", IsUnique = true)]
 public partial class Food
 {
     [Key]

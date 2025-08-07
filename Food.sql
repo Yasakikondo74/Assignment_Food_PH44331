@@ -16,6 +16,8 @@ create table Account(
     ID char(50) primary key not null,
     acc_username nvarchar(50) unique not null,
     acc_password nvarchar(50) not null,
+    Email nvarchar(100),
+    BirthDate datetime,
     acc_role char(10)
 )
 
@@ -42,10 +44,10 @@ insert into Food values
 
 -- Insert data into Account
 insert into Account values
-('A001', 'john_doe', 'password123', 'customer'),
-('A002', 'jane_smith', 'securepass', 'customer'),
-('A003', 'admin', '123', 'admin'),
-('A004', 'user', '123', 'customer')
+('A001', 'john_doe', 'password123', 'JD@gmail.com', getdate(), 'customer'),
+('A002', 'jane_smith', 'securepass','JSM@gmail.com', getdate(), 'customer'),
+('A003', 'admin', '123', 'admin@gmail.com', getdate(), 'admin'),
+('A004', 'user', '123','user@gmail.com', getdate(), 'customer')
 
 -- Insert data into Receipt
 insert into Receipt values

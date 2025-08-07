@@ -12,6 +12,11 @@ using System.Security.Claims;
 
 namespace PH44331_SD20103_Assignment_CSharp6
 {
+    public class PurchaseRequest
+    {
+        public string FoodId { get; set; }
+        public int Quantity { get; set; }
+    }
     public class LoginRequest
     {
         public string Username { get; set; }
@@ -99,7 +104,7 @@ namespace PH44331_SD20103_Assignment_CSharp6
                     return Results.NotFound();
                 }
                 return Results.Ok(account);
-            }).RequireAuthorization();
+            });
 
             // Dedicated: Get all foods
             app.MapGet("/food", async (FoodDBContext _db) =>
@@ -107,6 +112,14 @@ namespace PH44331_SD20103_Assignment_CSharp6
                 var foods = await _db.Foods.ToListAsync();
                 return Results.Ok(foods);
             }).RequireAuthorization();
+
+            app.MapGet("/food/available", async (FoodDBContext _db) =>
+            {
+                var availableFoods = await _db.Foods
+                    .Where(f => f.Available == true || f.Quantity > 0)
+                    .ToListAsync();
+                return Results.Ok(availableFoods);
+            });
 
             // Dedicated: Get food by id
             app.MapGet("/food/{id}", async (string id, FoodDBContext _db) =>
@@ -117,14 +130,14 @@ namespace PH44331_SD20103_Assignment_CSharp6
             }).RequireAuthorization();
 
             // Dedicated: Get all receipts (admin only)
-            app.MapGet("/receipt", [Authorize(Roles = "admin     ")] async (FoodDBContext _db) =>
+            app.MapGet("/receipt", async (FoodDBContext _db) =>
             {
                 var receipts = await _db.Receipts.ToListAsync();
                 return Results.Ok(receipts);
             });
 
             // Dedicated: Get receipt by id (admin only)
-            app.MapGet("/receipt/{id}", [Authorize(Roles = "admin     ")] async (string id, FoodDBContext _db) =>
+            app.MapGet("/receipt/{id}", async (string id, FoodDBContext _db) =>
             {
                 var receipt = await _db.Receipts.FirstOrDefaultAsync(x => x.Id == id);
                 if (receipt == null) return Results.NotFound();
@@ -132,14 +145,14 @@ namespace PH44331_SD20103_Assignment_CSharp6
             });
 
             // Dedicated: Get all receipt details (admin only)
-            app.MapGet("/receiptdetail", [Authorize(Roles = "admin     ")] async (FoodDBContext _db) =>
+            app.MapGet("/receiptdetail", async (FoodDBContext _db) =>
             {
                 var details = await _db.ReceiptDetails.ToListAsync();
                 return Results.Ok(details);
             });
 
             // Dedicated: Get receipt detail by id (admin only)
-            app.MapGet("/receiptdetail/{id}", [Authorize(Roles = "admin     ")] async (string id, FoodDBContext _db) =>
+            app.MapGet("/receiptdetail/{id}", async (string id, FoodDBContext _db) =>
             {
                 var detail = await _db.ReceiptDetails.FirstOrDefaultAsync(x => x.Id == id);
                 if (detail == null) return Results.NotFound();
@@ -147,7 +160,7 @@ namespace PH44331_SD20103_Assignment_CSharp6
             });
 
             // Dedicated: Get all accounts (admin only)
-            app.MapGet("/accounts", [Authorize(Roles = "admin     ")] async (FoodDBContext _db) =>
+            app.MapGet("/accounts", async (FoodDBContext _db) =>
             {
                 var accounts = await _db.Accounts.ToListAsync();
                 return Results.Ok(accounts);
@@ -166,7 +179,7 @@ namespace PH44331_SD20103_Assignment_CSharp6
             });
 
             // Dedicated: Create account (admin only)
-            app.MapPost("/account", [Authorize(Roles = "admin     ")] async (FoodDBContext _db, [FromBody] Account account) =>
+            app.MapPost("/account", async (FoodDBContext _db, [FromBody] Account account) =>
             {
                 if (await _db.Accounts.AnyAsync(a => a.Id == account.Id))
                     return Results.Conflict("Account with this ID already exists.");
@@ -176,7 +189,7 @@ namespace PH44331_SD20103_Assignment_CSharp6
             });
 
             // Dedicated: Create receipt (admin only)
-            app.MapPost("/receipt", [Authorize(Roles = "admin     ")] async (FoodDBContext _db, [FromBody] Receipt receipt) =>
+            app.MapPost("/receipt", async (FoodDBContext _db, [FromBody] Receipt receipt) =>
             {
                 if (await _db.Receipts.AnyAsync(r => r.Id == receipt.Id))
                     return Results.Conflict("Receipt with this ID already exists.");
@@ -186,7 +199,7 @@ namespace PH44331_SD20103_Assignment_CSharp6
             });
 
             // Dedicated: Create receipt detail (admin only)
-            app.MapPost("/receiptdetail", [Authorize(Roles = "admin     ")] async (FoodDBContext _db, [FromBody] ReceiptDetail detail) =>
+            app.MapPost("/receiptdetail", async (FoodDBContext _db, [FromBody] ReceiptDetail detail) =>
             {
                 if (await _db.ReceiptDetails.AnyAsync(rd => rd.Id == detail.Id))
                     return Results.Conflict("ReceiptDetail with this ID already exists.");
@@ -204,12 +217,13 @@ namespace PH44331_SD20103_Assignment_CSharp6
                 food.Available = updatedFood.Available;
                 food.Quantity = updatedFood.Quantity;
                 food.Cost = updatedFood.Cost;
+                food.ImageLink = updatedFood.ImageLink;
                 await _db.SaveChangesAsync();
                 return Results.Ok(food);
             });
 
             // Dedicated: Update account (admin only)
-            app.MapPut("/account/{id}", [Authorize(Roles = "admin     ")] async (FoodDBContext _db, string id, Account updatedAccount) =>
+            app.MapPut("/account/{id}", async (FoodDBContext _db, string id, Account updatedAccount) =>
             {
                 var account = await _db.Accounts.FirstOrDefaultAsync(a => a.Id == id);
                 if (account == null) return Results.NotFound();
@@ -221,7 +235,7 @@ namespace PH44331_SD20103_Assignment_CSharp6
             });
 
             // Dedicated: Update receipt (admin only)
-            app.MapPut("/receipt/{id}", [Authorize(Roles = "admin     ")] async (FoodDBContext _db, string id, Receipt updatedReceipt) =>
+            app.MapPut("/receipt/{id}", async (FoodDBContext _db, string id, Receipt updatedReceipt) =>
             {
                 var receipt = await _db.Receipts.FirstOrDefaultAsync(r => r.Id == id);
                 if (receipt == null) return Results.NotFound();
@@ -232,7 +246,7 @@ namespace PH44331_SD20103_Assignment_CSharp6
             });
 
             // Dedicated: Update receipt detail (admin only)
-            app.MapPut("/receiptdetail/{id}", [Authorize(Roles = "admin     ")] async (FoodDBContext _db, string id, ReceiptDetail updatedDetail) =>
+            app.MapPut("/receiptdetail/{id}", async (FoodDBContext _db, string id, ReceiptDetail updatedDetail) =>
             {
                 var detail = await _db.ReceiptDetails.FirstOrDefaultAsync(rd => rd.Id == id);
                 if (detail == null) return Results.NotFound();
@@ -255,7 +269,7 @@ namespace PH44331_SD20103_Assignment_CSharp6
             });
 
             // Dedicated: Delete account (admin only)
-            app.MapDelete("/account/{id}", [Authorize(Roles = "admin     ")] async (FoodDBContext _db, string id) =>
+            app.MapDelete("/account/{id}", async (FoodDBContext _db, string id) =>
             {
                 var account = await _db.Accounts.FirstOrDefaultAsync(a => a.Id == id);
                 if (account == null) return Results.NotFound();
@@ -265,7 +279,7 @@ namespace PH44331_SD20103_Assignment_CSharp6
             });
 
             // Dedicated: Delete receipt (admin only)
-            app.MapDelete("/receipt/{id}", [Authorize(Roles = "admin     ")] async (FoodDBContext _db, string id) =>
+            app.MapDelete("/receipt/{id}", async (FoodDBContext _db, string id) =>
             {
                 var receipt = await _db.Receipts.FirstOrDefaultAsync(r => r.Id == id);
                 if (receipt == null) return Results.NotFound();
@@ -275,7 +289,7 @@ namespace PH44331_SD20103_Assignment_CSharp6
             });
 
             // Dedicated: Delete receipt detail (admin only)
-            app.MapDelete("/receiptdetail/{id}", [Authorize(Roles = "admin     ")] async (FoodDBContext _db, string id) =>
+            app.MapDelete("/receiptdetail/{id}", async (FoodDBContext _db, string id) =>
             {
                 var detail = await _db.ReceiptDetails.FirstOrDefaultAsync(rd => rd.Id == id);
                 if (detail == null) return Results.NotFound();

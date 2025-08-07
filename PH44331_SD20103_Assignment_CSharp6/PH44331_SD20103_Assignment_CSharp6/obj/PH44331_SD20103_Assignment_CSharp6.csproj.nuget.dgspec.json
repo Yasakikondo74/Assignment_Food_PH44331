@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\thehu\\source\\repos\\Assignment_Food_PH44331\\PH44331_SD20103_Assignment_CSharp6\\PH44331_SD20103_Assignment_CSharp6\\PH44331_SD20103_Assignment_CSharp6.csproj": {}
+    "C:\\Users\\Yasaki74\\Downloads\\CSharp_6\\PH44331_SD20103_Assignment_CSharp6\\Assignment_Food_PH44331\\PH44331_SD20103_Assignment_CSharp6\\PH44331_SD20103_Assignment_CSharp6\\PH44331_SD20103_Assignment_CSharp6.csproj": {}
   },
   "projects": {
-    "C:\\Users\\thehu\\source\\repos\\Assignment_Food_PH44331\\PH44331_SD20103_Assignment_CSharp6\\PH44331_SD20103_Assignment_CSharp6\\PH44331_SD20103_Assignment_CSharp6.csproj": {
+    "C:\\Users\\Yasaki74\\Downloads\\CSharp_6\\PH44331_SD20103_Assignment_CSharp6\\Assignment_Food_PH44331\\PH44331_SD20103_Assignment_CSharp6\\PH44331_SD20103_Assignment_CSharp6\\PH44331_SD20103_Assignment_CSharp6.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\thehu\\source\\repos\\Assignment_Food_PH44331\\PH44331_SD20103_Assignment_CSharp6\\PH44331_SD20103_Assignment_CSharp6\\PH44331_SD20103_Assignment_CSharp6.csproj",
+        "projectUniqueName": "C:\\Users\\Yasaki74\\Downloads\\CSharp_6\\PH44331_SD20103_Assignment_CSharp6\\Assignment_Food_PH44331\\PH44331_SD20103_Assignment_CSharp6\\PH44331_SD20103_Assignment_CSharp6\\PH44331_SD20103_Assignment_CSharp6.csproj",
         "projectName": "PH44331_SD20103_Assignment_CSharp6",
-        "projectPath": "C:\\Users\\thehu\\source\\repos\\Assignment_Food_PH44331\\PH44331_SD20103_Assignment_CSharp6\\PH44331_SD20103_Assignment_CSharp6\\PH44331_SD20103_Assignment_CSharp6.csproj",
-        "packagesPath": "C:\\Users\\thehu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\thehu\\source\\repos\\Assignment_Food_PH44331\\PH44331_SD20103_Assignment_CSharp6\\PH44331_SD20103_Assignment_CSharp6\\obj\\",
+        "projectPath": "C:\\Users\\Yasaki74\\Downloads\\CSharp_6\\PH44331_SD20103_Assignment_CSharp6\\Assignment_Food_PH44331\\PH44331_SD20103_Assignment_CSharp6\\PH44331_SD20103_Assignment_CSharp6\\PH44331_SD20103_Assignment_CSharp6.csproj",
+        "packagesPath": "C:\\Users\\Yasaki74\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Yasaki74\\Downloads\\CSharp_6\\PH44331_SD20103_Assignment_CSharp6\\Assignment_Food_PH44331\\PH44331_SD20103_Assignment_CSharp6\\PH44331_SD20103_Assignment_CSharp6\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\thehu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Yasaki74\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,7 +26,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -91,7 +90,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
